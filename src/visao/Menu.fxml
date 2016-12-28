@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="743.0" prefWidth="1358.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.MenuControle">
+   <children>
+      <MenuBar fx:id="menuBar" prefHeight="32.0" prefWidth="1373.0">
+        <menus>
+          <Menu fx:id="menuLogin" mnemonicParsing="false" text="Login">
+               <items>
+                  <MenuItem fx:id="menuItemLoginCliente" mnemonicParsing="false" onAction="#menuLoginClienteClick" text="Login Cliente" />
+                  <MenuItem fx:id="menuItemLoginFuncionario" mnemonicParsing="false" onAction="#menuLoginFuncionarioClick" text="Login Funcionário" />
+               </items>
+          </Menu>
+          <Menu fx:id="menuCadastros" mnemonicParsing="false" text="Cadastros" visible="false">
+               <items>
+                  <MenuItem fx:id="menuCadastrarLivro" mnemonicParsing="false" onAction="#menuCadastrarLivroClick" text="Cadastrar Livro" />
+                  <MenuItem fx:id="menuCadastrarFilme" mnemonicParsing="false" onAction="#menuCadastrarFilmeClick" text="Cadastrar Filme" />
+                  <MenuItem fx:id="menuCadastrarUsuarios" mnemonicParsing="false" onAction="#menuCadastrarUsuariosClick" text="Cadastrar Usuário" />
+                  <MenuItem fx:id="menuCadastrarFuncionarios" mnemonicParsing="false" onAction="#menuCadastrarFuncionariosClick" text="Cadastrar Funcionário" />
+                  <MenuItem fx:id="menuCadastrarSecao" mnemonicParsing="false" onAction="#menuCadastrarSecaoClick" text="Cadastrar Seção" />
+                  <MenuItem fx:id="menuCadastrarCidade" mnemonicParsing="false" onAction="#menuCadastrarCidadeClick" text="Cadastrar Cidade" />
+                  <MenuItem fx:id="menuCadastrarEstado" mnemonicParsing="false" onAction="#menuCadastrarEstadoClick" text="Cadastrar Estado" />
+               </items>
+          </Menu>
+          <Menu fx:id="menuEmprestimos" mnemonicParsing="false" text="Empréstimos" visible="false">
+               <items>
+                  <MenuItem fx:id="menuEfetuarEmprestimo" mnemonicParsing="false" onAction="#menuEfetuarEmprestimoClick" text="Efetuar Empréstimo" />
+                  <MenuItem fx:id="menuEfetuarDevolucao" mnemonicParsing="false" onAction="#menuEfetuarDevolucaoClick" text="Efetuar Devolução" />
+               </items>
+          </Menu>
+            <Menu fx:id="menuReservas" mnemonicParsing="false" text="Reservas" visible="false">
+               <items>
+                  <MenuItem fx:id="menuReservar" mnemonicParsing="false" onAction="#menuReservarClick" text="Reservar" />
+                  <MenuItem fx:id="menuCancelarReserva" mnemonicParsing="false" onAction="#menuCancelarReservaClick" text="Cancelar Reserva" />
+                  <MenuItem fx:id="menuEfetuarReserva" mnemonicParsing="false" onAction="#menuEfetuarReservaClick" text="Efetivar Reserva" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuRelatorios" mnemonicParsing="false" text="Relatórios" visible="false">
+               <items>
+                  <MenuItem fx:id="menuGerarRelatorioLivros" mnemonicParsing="false" onAction="#menuGerarRelatorioLivrosClick" text="Gerar Relatório de Livros" />
+                  <MenuItem fx:id="menuGerarRelatorioFilmes" mnemonicParsing="false" onAction="#menuGerarRelatorioFilmesClick" text="Gerar Relatório de Filmes" />
+                  <MenuItem fx:id="menuGerarRelatorioEmprestimos" mnemonicParsing="false" onAction="#menuGerarRelatorioEmprestimosClick" text="Gerar Relatório de Empréstimos" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuConsultas" mnemonicParsing="false" text="Consultas" visible="false">
+               <items>
+                  <MenuItem fx:id="menuConsultarLivros" mnemonicParsing="false" onAction="#menuConsultarLivrosClick" text="Consultar Livros" />
+                  <MenuItem fx:id="menuConsultarFilmes" mnemonicParsing="false" onAction="#menuConsultarFilmesClick" text="Consultar Filmes" />
+                  <MenuItem fx:id="menuConsultarFuncionarios" mnemonicParsing="false" onAction="#menuConsultarFuncionariosClick" text="Consultar Funcionários" />
+                  <MenuItem fx:id="menuConsultarEmprestimos" mnemonicParsing="false" onAction="#menuConsultarEmprestimosClick" text="Consultar Empréstimos" />
+                  <MenuItem fx:id="menuConsultarReservas" mnemonicParsing="false" onAction="#menuConsultarReservasClick" text="Consultar Reservas" />
+                  <MenuItem fx:id="menuConsultarUsuarios" mnemonicParsing="false" onAction="#menuConsultarUsuariosClick" text="Consultar Usuários" />
+                  <MenuItem fx:id="menuConsultarCidades" mnemonicParsing="false" onAction="#menuConsultarCidadesClick" text="Consulta Cidades" />
+                  <MenuItem fx:id="menuConsultarEstados" mnemonicParsing="false" onAction="#menuConsultarEstadosClick" text="Consulta Estados" />
+                  <MenuItem fx:id="menuConsultarSecoes" mnemonicParsing="false" onAction="#menuConsultarSecoesClick" text="Consultar Seções" />
+               </items>
+            </Menu>
+            <Menu fx:id="menuTraduzir" mnemonicParsing="false" text="Translate">
+              <items>
+                <MenuItem fx:id="menuTraduzirIngles" mnemonicParsing="false" onAction="#menuTraduzirInglesClick" text="English" />
+              </items>
+            </Menu>
+            <Menu fx:id="menuItemSair" mnemonicParsing="false" text="Sair">
+              <items>
+                <MenuItem fx:id="menuSair" mnemonicParsing="false" onAction="#menuSairClick" text="Sair" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="anchorInterno" layoutY="38.0" prefHeight="667.0" prefWidth="1245.0">
+         <children>
+            <Label fx:id="lblUsuario" layoutX="479.0" layoutY="144.0" prefHeight="44.0" prefWidth="94.0" text="Usuário" visible="false">
+               <font>
+                  <Font name="Arial" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldUsuario" layoutX="480.0" layoutY="188.0" prefHeight="31.0" prefWidth="380.0" promptText="Digite aqui o seu usuário" visible="false" />
+            <Label fx:id="lblSenha" layoutX="480.0" layoutY="218.0" prefHeight="44.0" prefWidth="204.0" text="Senha" visible="false">
+               <font>
+                  <Font name="Arial" size="23.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnLoginCliente" layoutX="599.0" layoutY="314.0" mnemonicParsing="false" onAction="#btnLoginClienteClick" prefHeight="31.0" prefWidth="142.0" text="Login" visible="false" />
+            <PasswordField fx:id="password" layoutX="480.0" layoutY="262.0" prefHeight="31.0" prefWidth="380.0" promptText="Digite aqui a sua senha" visible="false" />
+            <ImageView fx:id="imgFuncionario" fitHeight="124.0" fitWidth="124.0" layoutX="599.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../_imagens/loginfuncred.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnLoginFuncionario" layoutX="599.0" layoutY="314.0" mnemonicParsing="false" onAction="#btnLoginFuncionarioClick" prefHeight="31.0" prefWidth="142.0" text="Login" visible="false" />
+            <ImageView fx:id="imgCliente" fitHeight="124.0" fitWidth="124.0" layoutX="608.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../../_imagens/loginred.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="209.0" layoutX="1247.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../_imagens/logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblLogado" layoutX="1143.0" layoutY="700.0" prefHeight="21.0" prefWidth="228.0" />
+      <Label fx:id="lblCPF" layoutX="1062.0" layoutY="721.0" prefHeight="21.0" prefWidth="309.0" textFill="#ff0202" />
+   </children>
+</AnchorPane>

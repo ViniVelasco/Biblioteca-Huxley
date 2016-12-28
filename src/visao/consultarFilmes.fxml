@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="648.0" prefWidth="948.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ConsultarFilmesControle">
+   <children>
+      <TableView fx:id="tableConsultarFilmes" layoutX="6.0" layoutY="14.0" prefHeight="563.0" prefWidth="921.0">
+        <columns>
+          <TableColumn fx:id="columnIDFilme" prefWidth="93.0" text="ID Filme" visible="false" />
+          <TableColumn fx:id="columnTitulo" prefWidth="159.0" text="Título" />
+            <TableColumn fx:id="columnQuantidade" prefWidth="119.0" text="Quantidade" />
+            <TableColumn fx:id="columnIdioma" prefWidth="112.0" text="Idioma" />
+            <TableColumn fx:id="columnNomeDiretor" prefWidth="135.0" text="Nome Diretor" />
+            <TableColumn fx:id="columnDuracao" prefWidth="134.0" text="Duração" />
+            <TableColumn fx:id="columnPaisOrigem" prefWidth="129.0" text="País de Origem" />
+            <TableColumn fx:id="columnIDExemplar" prefWidth="75.0" text="ID Exemplar" visible="false" />
+            <TableColumn fx:id="columnEmEmprestimo" prefWidth="132.0" text="Em Empréstimo" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="comboBoxSecao" layoutX="13.0" layoutY="610.0" prefHeight="31.0" prefWidth="330.0" promptText="Selecione a seção" />
+      <Label fx:id="lblFiltragem" layoutX="14.0" layoutY="588.0" text="Selecione uma seção para pesquisar por filtragem" />
+      <Button fx:id="btnPesquisar" layoutX="361.0" layoutY="610.0" mnemonicParsing="false" onAction="#btnPesquisarClick" text="Pesquisar" />
+      <Button fx:id="btnAlterar" layoutX="449.0" layoutY="610.0" mnemonicParsing="false" onAction="#btnAlterarClick" text="Alterar" />
+      <Button fx:id="btnDeletar" layoutX="518.0" layoutY="610.0" mnemonicParsing="false" onAction="#btnDeletar" text="Deletar" />
+      <ImageView fitHeight="31.0" fitWidth="59.0" layoutX="590.0" layoutY="610.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../_imagens/bcyoyEGxi.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnTraduzir" layoutX="590.0" layoutY="610.0" mnemonicParsing="false" onAction="#btnTraduzirClick" opacity="0.0" prefHeight="31.0" prefWidth="59.0" />
+   </children>
+</AnchorPane>

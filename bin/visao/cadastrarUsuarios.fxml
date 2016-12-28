@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="340.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.CadastrarUsuariosControle">
+   <children>
+      <Button fx:id="btnCadastrar" layoutX="254.0" layoutY="307.0" mnemonicParsing="false" onAction="#btnCadastrarClick" prefHeight="31.0" prefWidth="200.0" text="Cadastrar" />
+      <TextField fx:id="textCPF" layoutX="25.0" layoutY="43.0" prefHeight="31.0" prefWidth="222.0" />
+      <Label fx:id="lblCPF" layoutX="30.0" layoutY="20.0" text="CPF" />
+      <TextField fx:id="textNome" layoutX="294.0" layoutY="43.0" prefHeight="31.0" prefWidth="222.0" />
+      <Label fx:id="lblNome" layoutX="294.0" layoutY="20.0" text="Nome" />
+      <TextField fx:id="textEndereco" layoutX="560.0" layoutY="44.0" prefHeight="31.0" prefWidth="222.0" />
+      <Label fx:id="lblEndereco" layoutX="560.0" layoutY="22.0" text="Endereço" />
+      <Label fx:id="lblDataNascimento" layoutX="25.0" layoutY="84.0" text="Data de Nascimento" />
+      <TextField fx:id="textTelefone" layoutX="23.0" layoutY="159.0" prefHeight="31.0" prefWidth="222.0" />
+      <Label fx:id="lblTelefone" layoutX="28.0" layoutY="136.0" text="Telefone" />
+      <ComboBox fx:id="comboBoxEstadoCivil" layoutX="560.0" layoutY="160.0" prefHeight="31.0" prefWidth="222.0" promptText="Estado Civil" />
+      <ComboBox fx:id="comboBoxSexo" layoutX="22.0" layoutY="208.0" prefHeight="31.0" prefWidth="230.0" promptText="Sexo" />
+      <Button fx:id="btnLimpar" layoutX="463.0" layoutY="307.0" mnemonicParsing="false" onAction="#btnLimparClick" prefHeight="31.0" prefWidth="200.0" text="Limpar" />
+      <ImageView fitHeight="102.0" fitWidth="102.0" layoutX="144.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../_imagens/person-icon-1685.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textUsuario" layoutX="294.0" layoutY="107.0" prefHeight="31.0" prefWidth="222.0" />
+      <Label fx:id="lblUsuario" layoutX="299.0" layoutY="84.0" text="Usuário (login)" />
+      <Label fx:id="lblSenha" layoutX="565.0" layoutY="85.0" text="Senha (login)" />
+      <ComboBox fx:id="comboBoxCidade" disable="true" layoutX="556.0" layoutY="208.0" prefHeight="31.0" prefWidth="230.0" promptText="Cidade" />
+      <ComboBox fx:id="comboBoxEstado" layoutX="297.0" layoutY="208.0" onAction="#comboBoxEstadoSelecionado" prefHeight="31.0" prefWidth="230.0" promptText="Estado" />
+      <ComboBox fx:id="comboBoxTipoCliente" layoutX="297.0" layoutY="159.0" prefHeight="31.0" prefWidth="230.0" promptText="Tipo Cliente" />
+      <DatePicker fx:id="datePickerDataNascimento" layoutX="24.0" layoutY="105.0" prefHeight="31.0" prefWidth="230.0" />
+      <PasswordField fx:id="passwordSenha" layoutX="559.0" layoutY="107.0" prefHeight="31.0" prefWidth="222.0" />
+      <ImageView fitHeight="31.0" fitWidth="59.0" layoutX="669.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../_imagens/bcyoyEGxi.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnTraduzir" layoutX="669.0" layoutY="307.0" mnemonicParsing="false" onAction="#btnTraduzirClick" opacity="0.0" prefHeight="31.0" prefWidth="59.0" />
+   </children>
+</AnchorPane>

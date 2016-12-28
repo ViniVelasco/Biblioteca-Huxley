@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatório de Livros" language="groovy" pageWidth="780" pageHeight="650" columnWidth="740" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66adc89f-5531-42da-98eb-06e2fe2e1d83">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<field name="pv_st_Titulo" class="java.lang.String"/>
+	<field name="pv_in_Quantidade" class="java.lang.String"/>
+	<field name="pv_st_Idioma" class="java.lang.String"/>
+	<field name="pv_st_NomeDiretor" class="java.lang.String"/>
+	<field name="pv_st_Duracao" class="java.lang.String"/>
+	<field name="pv_st_pais_origem" class="java.lang.String">
+		<fieldDescription><![CDATA[pv_st_pais_origem]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/15)]]></groupExpression>
+	</group>
+	<group name="Group2">
+		<groupExpression><![CDATA[(int)($V{REPORT_COUNT}/5)]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" forecolor="#660066" uuid="5ccc0fbb-3078-468c-bed0-c52cb557dfec"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Relatório de Filmes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="63" y="46" width="200" height="22" uuid="fb63c142-c6d6-4f29-9e01-4b720d58df14"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Filmes da Biblioteca]]></text>
+			</staticText>
+			<image>
+				<reportElement x="263" y="4" width="300" height="64" uuid="a9a2674f-7161-45cc-9534-1dcd60784bcb"/>
+				<imageExpression><![CDATA["relatorios/leaf_banner_violet.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="51" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="1" width="174" height="27" forecolor="#000099" uuid="88467113-cbae-4d21-b25e-770e01d8f20d"/>
+				<textElement>
+					<font fontName="AR JULIAN" size="20"/>
+				</textElement>
+				<text><![CDATA[Título]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="28" width="178" height="20" uuid="6a23fb7c-ad5d-4582-b9d4-0fd1e66e2584"/>
+				<textFieldExpression><![CDATA[$F{pv_st_Titulo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="313" y="0" width="105" height="28" forecolor="#000099" uuid="2693b5c9-0af4-4958-87f1-9f4cd5d5fa00"/>
+				<textElement>
+					<font fontName="AR JULIAN" size="20"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="312" y="28" width="106" height="20" uuid="026af30a-ba0f-4849-aa2a-453c14da7c34"/>
+				<textFieldExpression><![CDATA[$F{pv_in_Quantidade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="0" width="100" height="28" forecolor="#000099" uuid="02f5006a-bbba-4238-bd1a-942926d97fed"/>
+				<textElement>
+					<font fontName="AR JULIAN" size="20"/>
+				</textElement>
+				<text><![CDATA[Idioma]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="28" width="93" height="20" uuid="fc211a01-8da4-4d52-906d-8bb5b4492df5"/>
+				<textFieldExpression><![CDATA[$F{pv_st_Idioma}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="515" y="0" width="126" height="28" forecolor="#000099" uuid="bc9cf192-24e5-4c3f-8629-fe4a0cd68d01"/>
+				<textElement>
+					<font fontName="AR JULIAN" size="20"/>
+				</textElement>
+				<text><![CDATA[País]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="641" y="0" width="99" height="28" forecolor="#000099" uuid="e208692a-651d-4c64-9d9b-5718d1c60678"/>
+				<textElement>
+					<font fontName="AR JULIAN" size="20"/>
+				</textElement>
+				<text><![CDATA[Duração]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="0" width="740" height="1" forecolor="#9900FF" uuid="4a0442de-fbfa-431b-ae3c-86986a69c8ab"/>
+			</line>
+			<line>
+				<reportElement x="740" y="0" width="1" height="48" forecolor="#9900FF" uuid="b77032fc-a338-42df-a085-281fe37d6d6a"/>
+			</line>
+			<line>
+				<reportElement x="-1" y="0" width="1" height="48" forecolor="#9900FF" uuid="2c02643f-4fcd-4305-b278-8f42b261870c"/>
+			</line>
+			<line>
+				<reportElement x="0" y="47" width="741" height="1" forecolor="#9900FF" uuid="884e48ec-9580-4540-8453-8a5595756264"/>
+			</line>
+			<line>
+				<reportElement x="513" y="0" width="1" height="48" forecolor="#9900FF" uuid="ceecabd4-5541-4d60-a362-64b60b8c7ee2"/>
+			</line>
+			<line>
+				<reportElement x="418" y="1" width="1" height="47" forecolor="#9900FF" uuid="410b772e-83c8-4bec-8319-2f632e939f83"/>
+			</line>
+			<line>
+				<reportElement x="176" y="1" width="1" height="46" forecolor="#9900FF" uuid="6141f75c-22eb-484d-bbbd-a37d68ca3ae2"/>
+			</line>
+			<line>
+				<reportElement x="0" y="27" width="740" height="1" forecolor="#9900FF" uuid="94d5ce9f-fe60-4449-8a4d-4dbdf523703a"/>
+			</line>
+			<textField>
+				<reportElement x="641" y="28" width="99" height="20" uuid="d445acdd-3a19-46e2-b1d3-531affd733ac"/>
+				<textFieldExpression><![CDATA[$F{pv_st_Duracao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="179" y="0" width="131" height="26" forecolor="#000099" uuid="74e0ce3b-6271-4d82-9364-c2900f90b812"/>
+				<textElement>
+					<font fontName="AR JULIAN" size="20"/>
+				</textElement>
+				<text><![CDATA[Diretor]]></text>
+			</staticText>
+			<line>
+				<reportElement x="640" y="0" width="1" height="47" forecolor="#9900FF" uuid="1deff5aa-c82f-48c5-9178-9c75da8e053d"/>
+			</line>
+			<textField>
+				<reportElement x="178" y="28" width="142" height="18" uuid="9fa3ef73-65d4-45fa-8cad-40c5a38a2a6e"/>
+				<textFieldExpression><![CDATA[$F{pv_st_NomeDiretor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="515" y="29" width="127" height="18" uuid="bf7fd02b-9a61-4d3b-bed3-fc2687f5d5c9"/>
+				<textFieldExpression><![CDATA[$F{pv_st_pais_origem}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="310" y="0" width="1" height="47" forecolor="#9900FF" uuid="99b4bb1d-ad5a-4258-b07f-54afcbffd782"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="740" height="1" forecolor="#9900FF" uuid="d1a6eb96-f939-4750-bb7b-9535c94118cc"/>
+			</line>
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="9c730761-e693-4483-ab5d-66dc7d519fa6"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="359bca48-c48c-4e58-a835-874f672aa57d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="1a070864-5c9a-410f-bcb8-9cef1871f186"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

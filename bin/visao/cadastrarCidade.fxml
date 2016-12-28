@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="261.0" prefWidth="575.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.CadastrarCidadeControle">
+   <children>
+      <Button fx:id="btnCadastrar" layoutX="258.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnCadastrarClick" prefHeight="31.0" prefWidth="219.0" text="Cadastrar" />
+      <ImageView fitHeight="101.0" fitWidth="165.0" layoutX="77.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../_imagens/iconCidade.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="textNome" layoutX="88.0" layoutY="57.0" prefHeight="31.0" prefWidth="396.0" />
+      <Label fx:id="lblNome" layoutX="88.0" layoutY="36.0" prefHeight="21.0" prefWidth="138.0" text="Nome da Cidade" />
+      <ComboBox fx:id="comboBoxEstado" layoutX="85.0" layoutY="100.0" prefHeight="31.0" prefWidth="402.0" promptText="Estado da Cidade" />
+      <ImageView fitHeight="31.0" fitWidth="59.0" layoutX="495.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../_imagens/bcyoyEGxi.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnTraduzir" layoutX="495.0" layoutY="180.0" mnemonicParsing="false" onAction="#btnTraduzirClick" opacity="0.0" prefHeight="31.0" prefWidth="59.0" />
+   </children>
+</AnchorPane>

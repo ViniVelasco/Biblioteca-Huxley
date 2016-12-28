@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Relatório de Empréstimos" language="groovy" pageWidth="840" pageHeight="842" columnWidth="800" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5f02f88b-8a40-4be4-ac00-db4e4f0c4971">
+	<property name="ireport.zoom" value="1.1000000000000005"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="listaEmprestimo" class="java.util.List"/>
+	<field name="pv_st_NomeCliente" class="java.lang.String"/>
+	<field name="pv_st_NomeExemplar" class="java.lang.String"/>
+	<field name="pv_dt_DataEmprestimo" class="java.lang.String"/>
+	<field name="pv_dt_DataPrazo" class="java.lang.String"/>
+	<field name="pv_dt_DataEntrega" class="java.lang.String"/>
+	<field name="pv_st_Status" class="java.lang.String"/>
+	<field name="pv_st_CPFCliente" class="java.lang.String"/>
+	<field name="multa" class="java.lang.String"/>
+	<group name="EmprestimosEmAberto">
+		<groupExpression><![CDATA[$F{pv_st_Status}]]></groupExpression>
+		<groupHeader>
+			<band height="38">
+				<frame>
+					<reportElement mode="Opaque" x="5" y="13" width="795" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="fe232fc8-616d-4a80-8cae-5551a5e44663"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" isPrintRepeatedValues="false" x="1" y="0" width="479" height="24" forecolor="#FF0000" uuid="56f31789-1049-489c-981d-23d271faf12a"/>
+						<textElement>
+							<font fontName="MS UI Gothic" isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA["Empréstimos Finalizados"]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<image>
+				<reportElement x="701" y="0" width="99" height="132" uuid="dae02997-6b2f-41ef-8af7-36d657a8e5b0"/>
+				<imageExpression><![CDATA["relatorios/cherry.jpg"]]></imageExpression>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="697" height="95" backcolor="#000000" uuid="62df2972-8252-4832-952a-3ff76356985c"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="476" height="66" uuid="640859eb-7437-4a2e-ae15-1fb195584eff"/>
+					<textElement>
+						<font size="42" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Relatório de Empréstimos]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="227" y="66" width="249" height="29" uuid="5165acea-bce0-49ae-90d6-8e29efa00984"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Empréstimos da Biblioteca]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="697" height="32" forecolor="#000000" backcolor="#CC0000" uuid="0f22b4b2-b2dc-4471-b0a0-3dd9fcac86c7"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="af068a86-9c2a-4cde-9a37-eb8cd1c3cf4a"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="72" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="5" y="0" width="795" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="bd72bd00-5ec2-44db-b0d3-15e85fb86638"/>
+				<textField>
+					<reportElement x="2" y="0" width="317" height="23" forecolor="#FF0000" uuid="f2e15d92-da14-4c73-a3a1-2edf4c542458"/>
+					<textElement>
+						<font fontName="MS UI Gothic" size="18" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Cliente: " + $F{pv_st_NomeCliente}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField>
+				<reportElement x="7" y="45" width="124" height="20" forecolor="#9900CC" uuid="a4ad6bda-16cb-4df6-84f8-b1532deb1c9a"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pv_st_CPFCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="45" width="148" height="20" forecolor="#9900CC" uuid="b159de89-66ee-4f33-a4ec-a82b78a7cb60"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pv_st_NomeExemplar}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="45" width="104" height="20" forecolor="#9900CC" uuid="ff16a997-e796-4b9a-94c2-54894a491992"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pv_dt_DataEmprestimo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="45" width="100" height="20" forecolor="#9900CC" uuid="dbac88c8-9631-4861-8b1b-c983adf893ba"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pv_dt_DataPrazo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="45" width="99" height="20" forecolor="#9900CC" uuid="62972082-1155-4cf4-bc4c-cadb0d01f5ec"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pv_st_Status}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="7" y="25" width="124" height="20" forecolor="#9900CC" uuid="b3354f10-0cd7-472f-abaa-28b1ea0e38b8"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="16" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CPF Do Cliente"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="131" y="25" width="148" height="20" forecolor="#9900CC" uuid="06d903dd-9463-432c-97fe-aca3651ba119"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nome do Exemplar"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="25" width="104" height="20" forecolor="#9900CC" uuid="4412b5d9-9fbc-4635-9920-6fa12f28ae18"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Data de Início"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="25" width="100" height="20" forecolor="#9900CC" uuid="c05e7ee3-910d-489e-824d-781163745075"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Data Prazo"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="483" y="25" width="99" height="20" forecolor="#9900CC" uuid="ed88c47f-46dc-4f24-bc6c-62f79c69d1fd"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Status"]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="5" y="24" width="795" height="1" forecolor="#FF0000" uuid="9e222076-e63b-44f8-a183-b4a0a08cdb57"/>
+			</line>
+			<line>
+				<reportElement x="5" y="70" width="795" height="1" forecolor="#FF0000" uuid="83f2b424-c07c-436e-b664-f9f014cc0c40"/>
+			</line>
+			<line>
+				<reportElement x="579" y="24" width="1" height="46" forecolor="#FF0000" uuid="06413b3b-8414-4832-bf65-8bdc0e9ed4c7"/>
+			</line>
+			<line>
+				<reportElement x="5" y="25" width="1" height="46" forecolor="#FF0000" uuid="27c58a3d-a430-440a-9977-3105801404fc"/>
+			</line>
+			<line>
+				<reportElement x="5" y="45" width="795" height="1" forecolor="#FF0000" uuid="822bc736-64a1-4a9e-978b-f4450524d560"/>
+			</line>
+			<line>
+				<reportElement x="129" y="25" width="1" height="46" forecolor="#FF0000" uuid="94769a87-4a5d-4e7b-92ff-bdbfd2f80e18"/>
+			</line>
+			<line>
+				<reportElement x="277" y="25" width="1" height="46" forecolor="#FF0000" uuid="8979256a-01e5-4578-896a-f19c4eaa0dce"/>
+			</line>
+			<line>
+				<reportElement x="381" y="25" width="1" height="46" forecolor="#FF0000" uuid="e44536ef-3454-4659-9e4f-178ce60e2738"/>
+			</line>
+			<line>
+				<reportElement x="482" y="25" width="1" height="46" forecolor="#FF0000" uuid="679dcec6-53a0-47ed-8592-9ea2f80a24f1"/>
+			</line>
+			<textField>
+				<reportElement x="580" y="25" width="121" height="21" forecolor="#9900CC" uuid="36ef4f7a-9ace-4f7d-8c32-2f046365977b"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Data Entregue"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="582" y="45" width="119" height="20" forecolor="#9900CC" uuid="3ee7338f-3c2f-4f7d-ad10-e13526990759"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{pv_dt_DataEntrega}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="701" y="25" width="99" height="21" forecolor="#9900CC" uuid="9cc0c304-a589-4915-ac52-4c754c039576"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Multa"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="701" y="45" width="99" height="20" forecolor="#9900CC" uuid="076a18e8-186e-4c37-858d-e379d0807657"/>
+				<textElement>
+					<font fontName="Franklin Gothic Demi Cond" size="15"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{multa}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="799" y="24" width="1" height="46" forecolor="#FF0000" uuid="59504c69-d098-4917-a82d-370483d979c0"/>
+			</line>
+			<line>
+				<reportElement x="700" y="25" width="1" height="45" forecolor="#FF0000" uuid="e4881c32-0e34-496e-84b9-652d39196237"/>
+			</line>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="799" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="3b21e759-ff03-427e-b428-27c04574c800"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="759" y="1" width="40" height="20" forecolor="#FFFFFF" uuid="b5ca8cd5-21fd-4c6d-81e0-8d12416339ea"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="679" y="1" width="80" height="20" forecolor="#FFFFFF" uuid="325f8306-d0c3-49a2-804a-cb9cf2fe7456"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="6e2b2065-95b8-4838-ab76-9079364be823"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

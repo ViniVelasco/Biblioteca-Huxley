@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="658.0" prefWidth="1034.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ConsultarEmprestimoControle">
+   <children>
+      <TableView fx:id="tableConsultarEmprestimos" layoutX="4.0" layoutY="14.0" prefHeight="563.0" prefWidth="1024.0">
+        <columns>
+          <TableColumn fx:id="columnCPFCliente" prefWidth="127.0" text="CPF do Cliente" />
+            <TableColumn fx:id="columnCPFFuncionario" prefWidth="151.0" text="CPF do Funcionário" />
+            <TableColumn fx:id="columnidExemplar" prefWidth="112.0" text="idExemplar" visible="false" />
+            <TableColumn fx:id="columnNomeDoExemplar" prefWidth="157.0" text="Nome do Exemplar" />
+            <TableColumn fx:id="columnDataInicio" prefWidth="105.0" text="Data de Início" />
+            <TableColumn fx:id="columnDataPrazo" prefWidth="118.0" text="Data de Prazo" />
+            <TableColumn fx:id="columnStatus" prefWidth="85.0" text="Status" />
+            <TableColumn fx:id="columnDataEntregue" minWidth="0.0" prefWidth="114.0" text="Data Entregue" />
+            <TableColumn fx:id="columnMulta" prefWidth="166.0" text="Multa" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="comboBoxTipoPesquisa" layoutX="13.0" layoutY="610.0" onAction="#selecionaTipoPesquisa" prefHeight="31.0" prefWidth="449.0" promptText="Selecione um tipo de pesquisa" />
+      <Label fx:id="lblFiltragem" layoutX="14.0" layoutY="588.0" prefHeight="21.0" prefWidth="404.0" text="Selecione uma seção para pesquisar por filtragem" />
+      <Button fx:id="btnPesquisar" layoutX="881.0" layoutY="609.0" mnemonicParsing="false" onAction="#btnPesquisarClick" text="Pesquisar" />
+      <TextField fx:id="textPesquisa" layoutX="515.0" layoutY="609.0" prefHeight="31.0" prefWidth="346.0" />
+      <Text fx:id="lblPesquisa" layoutX="515.0" layoutY="604.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="345.6708984375" />
+      <ImageView fitHeight="31.0" fitWidth="59.0" layoutX="971.0" layoutY="609.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../_imagens/bcyoyEGxi.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnTraduzir" layoutX="971.0" layoutY="609.0" mnemonicParsing="false" onAction="#btnTraduzirClick" opacity="0.0" prefHeight="31.0" prefWidth="59.0" />
+   </children>
+</AnchorPane>
